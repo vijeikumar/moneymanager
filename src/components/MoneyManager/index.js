@@ -65,6 +65,17 @@ class MoneyManager extends Component {
     this.setState({titleInput: event.target.value})
   }
 
+  getIncome = () => {
+    const {transactionList} = this.state
+    let incomeAmount = 0
+    transactionList.forEach(eachTransaction => {
+      if (eachTransaction.type === transactionTypeOptions[0].displayText) {
+        incomeAmount += eachTransaction.amount
+      }
+    })
+    return incomeAmount
+  }
+
   getExpenses = () => {
     const {transactionList} = this.state
     let expensesAmount = 0
@@ -96,8 +107,8 @@ class MoneyManager extends Component {
   render() {
     const {titleInput, amountInput, optionId, transactionList} = this.state
     const balanceAmount = this.getBalance()
-    const incomeAmount = this.getIncome()
     const expensesAmount = this.getExpenses()
+    const incomeAmount = this.getIncome()
 
     return (
       <div className="app-container">

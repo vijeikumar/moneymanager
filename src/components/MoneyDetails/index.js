@@ -25,7 +25,7 @@ const MoneyDetails = props => {
           className="details-img"
         />
         <div>
-          <p className="details-text">Your Balance</p>
+          <p className="details-text">Your Income</p>
           <p className="details-money" data-testid="incomeAmount">
             Rs {incomeAmount}
           </p>
@@ -38,7 +38,7 @@ const MoneyDetails = props => {
           className="details-img"
         />
         <div>
-          <p className="details-text">Your Balance</p>
+          <p className="details-text">Your Expenses</p>
           <p className="details-money" data-testid="expensesAmount">
             Rs {expensesAmount}
           </p>
